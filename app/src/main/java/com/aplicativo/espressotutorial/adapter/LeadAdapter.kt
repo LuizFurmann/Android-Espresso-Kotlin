@@ -2,6 +2,7 @@ package com.aplicativo.espressotutorial.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -21,8 +22,17 @@ class LeadAdapter : ListAdapter<Lead, LeadAdapter.LeadViewHolder>(LeadCallback()
         holder.name.text = lead.name
         holder.address.text = lead.address
 
+        callToast(holder, lead)
     }
 
+    private fun callToast(
+        holder: LeadViewHolder,
+        lead: Lead
+    ) {
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "Nome ${lead.name}", Toast.LENGTH_SHORT).show()
+        }
+    }
     class LeadViewHolder(binding: CardItemBinding): RecyclerView.ViewHolder(binding.root) {
         val name = binding.name
         val address = binding.address
