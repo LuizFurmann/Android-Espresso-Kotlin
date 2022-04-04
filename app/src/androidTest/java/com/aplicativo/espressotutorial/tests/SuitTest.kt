@@ -5,9 +5,10 @@ import org.junit.runners.Suite
 
 
 @RunWith(Suite::class)
-@Suite.SuiteClasses(
+@Suite.SuiteClasses( //Executa todos os testes adicionados ao suite, na sequência adicionada
     LoginTest::class,
-    DraweTest::class
+    DraweTest::class,
+    TabLayoutTest::class
 )
 
 class SuitTest

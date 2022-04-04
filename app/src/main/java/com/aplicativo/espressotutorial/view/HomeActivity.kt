@@ -35,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_home -> Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
                 R.id.nav_lead -> openLeadActicity()
+                R.id.nav_tab -> openTabActicity()
                 R.id.nav_sync -> Toast.makeText(applicationContext, "Sincronizado", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> Toast.makeText(applicationContext, "Saindo...", Toast.LENGTH_SHORT).show()
             }
@@ -51,6 +52,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun openLeadActicity(){
         val intent = Intent(applicationContext, LeadActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openTabActicity(){
+        val intent = Intent(applicationContext, TabLayoutActivity::class.java)
         startActivity(intent)
     }
 }

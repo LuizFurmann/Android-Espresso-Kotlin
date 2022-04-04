@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EspressoTutorial">
         <activity
+            android:name=".view.TabLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.LeadActivity"
             android:exported="false" />
         <activity
